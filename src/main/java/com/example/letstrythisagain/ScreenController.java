@@ -17,6 +17,13 @@ ScreenController {
     private Scene scene;
     private Parent root;
 
+    public void switchToHome(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("home.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     public void switchToAddPartInHouse(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("add-part-in-house.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -48,16 +55,20 @@ ScreenController {
         stage.setScene(scene);
         stage.show();
     }
-    public void switchToHome(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("home.fxml"));
+
+    public void switchToAddProduct(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("add-product.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
-    @FXML
-    protected void onHelloButtonClick() {
-
+    public void switchToModifyProduct(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("modify-product.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
-}
+    }
